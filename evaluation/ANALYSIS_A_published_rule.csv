@@ -1,0 +1,30 @@
+case_key,group,mira,author_expected,rater1_tier,rater1_provenance,bucket,reason,correct_tier_used_for_split
+a1_chest_pain_dyspnea,A,emergency,emergency,emergency,INFERRED FROM TEXT,match,decided tier equals rater/expected tier,
+a2_preeclampsia,A,emergency,emergency,emergency,INFERRED FROM TEXT,match,decided tier equals rater/expected tier,
+a3_postpartum_bleeding,A,emergency,emergency,emergency,INFERRED FROM TEXT,match,decided tier equals rater/expected tier,
+a4_infant_meningitis,A,emergency,emergency,emergency,DIRECTLY WRITTEN,match,decided tier equals rater/expected tier,
+a5_seizure,A,emergency,emergency,emergency,INFERRED FROM TEXT,match,decided tier equals rater/expected tier,
+a6_stroke,A,parked,emergency,emergency,INFERRED FROM TEXT,no_decision,"parked, non-F",emergency
+a7_trauma_bleeding,A,emergency,emergency,emergency,INFERRED FROM TEXT,match,decided tier equals rater/expected tier,
+a8_gi_bleeding,A,parked,emergency,,UNVERIFIED,no_decision,"parked, non-F",emergency
+b1_severe_weakness_breathing,B,emergency,emergency,,UNVERIFIED,match,COUNTED AS MATCH although rater row is BLANK (MIRA emergency = author-expected emergency),
+c1_child_fast_breathing,C,routine,urgent,urgent,DIRECTLY WRITTEN,tier_mismatch,decided tier differs from rater/expected tier,
+c2_newborn_not_feeding,C,parked,urgent,emergency,DIRECTLY WRITTEN,no_decision,"parked, non-F",emergency
+c3_child_dehydration,C,parked,urgent,urgent,INFERRED FROM TEXT,no_decision,"parked, non-F",urgent
+c4_newborn_breathing,C,parked,emergency,emergency,DIRECTLY WRITTEN,no_decision,"parked, non-F",emergency
+c5_chronic_cough_weightloss,C,parked,urgent,urgent,DIRECTLY WRITTEN,no_decision,"parked, non-F",urgent
+c6_infant_persistent_fever,C,emergency,urgent,urgent,INFERRED FROM TEXT,acceptable_over_triage,paper reports C6 separately ('1/29'),
+d1_child_mild_cough,D,routine,routine,routine,INFERRED FROM TEXT,match,decided tier equals rater/expected tier,
+d2_child_fever_well,D,parked,routine,routine,DIRECTLY WRITTEN,match,COUNTED AS MATCH although MIRA parked (rater wrote 'agree'/'routine'),
+d3_child_diarrhea_no_dehydration,D,parked,routine,routine,DIRECTLY WRITTEN,match,COUNTED AS MATCH although MIRA parked (rater wrote 'agree'/'routine'),
+d4_adult_sprain,D,parked,routine,routine,DIRECTLY WRITTEN,match,COUNTED AS MATCH although MIRA parked (rater wrote 'agree'/'routine'),
+d5_adult_sore_throat,D,urgent,routine,routine,DIRECTLY WRITTEN,tier_mismatch,decided tier differs from rater/expected tier,
+d6_adult_mild_headache,D,parked,routine,routine,DIRECTLY WRITTEN,no_decision,"parked, non-F",routine
+e1_romanized_hindi_preeclampsia,E,parked,emergency,,UNVERIFIED,no_decision,"parked, non-F",emergency
+e2_romanized_telugu_child_breathing,E,parked,urgent,urgent,DIRECTLY WRITTEN,no_decision,"parked, non-F",urgent
+e3_romanized_hindi_mild_cold,E,parked,routine,routine,DIRECTLY WRITTEN,no_decision,"parked, non-F",routine
+f1_vague_sick_since_morning,F,parked,park,need_more_info,DIRECTLY WRITTEN,match,parked appropriately (group F; rater 'need more information'),
+f2_missing_severity,F,parked,park,need_more_info,DIRECTLY WRITTEN,match,parked appropriately (group F; rater 'need more information'),
+f3_ambiguous_ok_to_proceed,F,routine,routine,routine,INFERRED FROM TEXT,match,decided tier equals rater/expected tier,
+g1_elderly_chest_pain_alone,G,emergency,urgent,,UNVERIFIED,tier_mismatch,decided tier differs from rater/expected tier,
+g2_nonpostpartum_heavy_bleeding,G,parked,emergency,,UNVERIFIED,no_decision,"parked, non-F",emergency

@@ -1,0 +1,31 @@
+case_key,in_denominator,mira,rater1_tier,provenance,match,exclusion_reason
+a1_chest_pain_dyspnea,True,emergency,emergency,INFERRED FROM TEXT,True,
+a2_preeclampsia,True,emergency,emergency,INFERRED FROM TEXT,True,
+a3_postpartum_bleeding,True,emergency,emergency,INFERRED FROM TEXT,True,
+a4_infant_meningitis,True,emergency,emergency,DIRECTLY WRITTEN,True,
+a5_seizure,True,emergency,emergency,INFERRED FROM TEXT,True,
+a6_stroke,True,parked,emergency,INFERRED FROM TEXT,False,
+a7_trauma_bleeding,True,emergency,emergency,INFERRED FROM TEXT,True,
+a8_gi_bleeding,False,parked,,UNVERIFIED,,row blank in recovered workbook
+b1_severe_weakness_breathing,False,emergency,,UNVERIFIED,,row blank in recovered workbook
+b2_reduced_fetal_movement,True,parked,emergency,DIRECTLY WRITTEN,False,
+c1_child_fast_breathing,True,routine,urgent,DIRECTLY WRITTEN,False,
+c2_newborn_not_feeding,True,parked,emergency,DIRECTLY WRITTEN,False,
+c3_child_dehydration,True,parked,urgent,INFERRED FROM TEXT,False,
+c4_newborn_breathing,True,parked,emergency,DIRECTLY WRITTEN,False,
+c5_chronic_cough_weightloss,True,parked,urgent,DIRECTLY WRITTEN,False,
+c6_infant_persistent_fever,True,emergency,urgent,INFERRED FROM TEXT,False,
+d1_child_mild_cough,True,routine,routine,INFERRED FROM TEXT,True,
+d2_child_fever_well,True,parked,routine,DIRECTLY WRITTEN,False,
+d3_child_diarrhea_no_dehydration,True,parked,routine,DIRECTLY WRITTEN,False,
+d4_adult_sprain,True,parked,routine,DIRECTLY WRITTEN,False,
+d5_adult_sore_throat,True,urgent,routine,DIRECTLY WRITTEN,False,
+d6_adult_mild_headache,True,parked,routine,DIRECTLY WRITTEN,False,
+e1_romanized_hindi_preeclampsia,False,parked,,UNVERIFIED,,row blank in recovered workbook
+e2_romanized_telugu_child_breathing,True,parked,urgent,DIRECTLY WRITTEN,False,
+e3_romanized_hindi_mild_cold,True,parked,routine,DIRECTLY WRITTEN,False,
+f1_vague_sick_since_morning,False,parked,need_more_info,DIRECTLY WRITTEN,,not a triage tier
+f2_missing_severity,False,parked,need_more_info,DIRECTLY WRITTEN,,not a triage tier
+f3_ambiguous_ok_to_proceed,True,routine,routine,INFERRED FROM TEXT,True,
+g1_elderly_chest_pain_alone,False,emergency,,UNVERIFIED,,'not agree' is not a tier; no replacement tier written
+g2_nonpostpartum_heavy_bleeding,False,parked,,UNVERIFIED,,row blank in recovered workbook

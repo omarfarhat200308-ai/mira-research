@@ -1,0 +1,67 @@
+[
+  {
+    "label": "hindi_standard_fever",
+    "language_code": "hi-IN",
+    "input_text": "mujhe bukhar hai",
+    "register": "standard",
+    "tts_latency_s": 0.783,
+    "stt_latency_s": 0.318,
+    "total_latency_s": 1.1,
+    "transcript": "मुझे बुखार है।",
+    "detected_language": "hi-IN",
+    "language_confidence": null,
+    "error": null
+  },
+  {
+    "label": "hindi_colloquial_fever",
+    "language_code": "hi-IN",
+    "input_text": "mereko bahut tez bukhar aa raha hai do din se",
+    "register": "colloquial/regional",
+    "tts_latency_s": 1.062,
+    "stt_latency_s": 0.586,
+    "total_latency_s": 1.648,
+    "transcript": "मेरे को बहुत तेज़ बुख़ार आ रहा है दो दिन से।",
+    "detected_language": "hi-IN",
+    "language_confidence": null,
+    "error": null
+  },
+  {
+    "label": "hindi_standard_breathing",
+    "language_code": "hi-IN",
+    "input_text": "unko saans lene mein bahut takleef ho rahi hai",
+    "register": "standard",
+    "tts_latency_s": 1.168,
+    "stt_latency_s": 0.515,
+    "total_latency_s": 1.683,
+    "transcript": "उनको सांस लेने में बहुत तकलीफ़ हो रही है।",
+    "detected_language": "hi-IN",
+    "language_confidence": null,
+    "error": null
+  },
+  {
+    "label": "telugu_standard_fever",
+    "language_code": "te-IN",
+    "input_text": "naaku jwaram undi rendu rojula nunchi",
+    "register": "standard",
+    "tts_latency_s": 0.891,
+    "stt_latency_s": 0.464,
+    "total_latency_s": 1.355,
+    "transcript": "నాకు జ్వరం ఉంది రెండు రోజుల నుంచి",
+    "detected_language": "te-IN",
+    "language_confidence": null,
+    "error": null
+  },
+  {
+    "label": "telugu_standard_cough",
+    "language_code": "te-IN",
+    "input_text": "naaku daggu undi konchem",
+    "register": "standard",
+    "tts_latency_s": 0.779,
+    "stt_latency_s": 0.352,
+    "total_latency_s": 1.132,
+    "transcript": "నాకు దగ్గు ఉంది కొంచెం.",
+    "detected_language": "te-IN",
+    "language_confidence": null,
+    "error": null
+  }
+]

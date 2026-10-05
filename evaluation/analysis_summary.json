@@ -1,0 +1,77 @@
+{
+  "analysis_A": {
+    "denominator": 29,
+    "match": 14,
+    "no_decision": 11,
+    "mismatch": 3,
+    "acceptable_over_triage": 1,
+    "nodecision_split": {
+      "emergency": 6,
+      "urgent": 3,
+      "routine": 2
+    },
+    "ci_match": [
+      0.3138581933079522,
+      0.6556926202943085
+    ],
+    "ci_nodec": [
+      0.22687795730867344,
+      0.5599777379071503
+    ]
+  },
+  "analysis_B_all_usable": {
+    "n": 23,
+    "matches": 8,
+    "parked": 12,
+    "ci": [
+      0.18811054636982238,
+      0.5511002309310836
+    ],
+    "match_ids": [
+      "a1_chest_pain_dyspnea",
+      "a2_preeclampsia",
+      "a3_postpartum_bleeding",
+      "a4_infant_meningitis",
+      "a5_seizure",
+      "a7_trauma_bleeding",
+      "d1_child_mild_cough",
+      "f3_ambiguous_ok_to_proceed"
+    ]
+  },
+  "analysis_B_direct_only": {
+    "n": 13,
+    "matches": 1,
+    "parked": 10,
+    "ci": [
+      0.013710066379696323,
+      0.3331453392824736
+    ],
+    "match_ids": [
+      "a4_infant_meningitis"
+    ]
+  },
+  "independent_recount": {
+    "n": 23,
+    "matches": 8,
+    "agrees_with_B_all_usable": true
+  },
+  "parked": {
+    "n": 17,
+    "reached_triage": 0,
+    "with_reply": 0,
+    "with_next_steps": 0,
+    "with_facility": 0,
+    "stage_sets": {
+      "intake": 17
+    },
+    "park_reasons": {
+      "missing_duration_severity_or_other": 6,
+      "missing_sex": 11
+    }
+  },
+  "provenance_counts": {
+    "INFERRED FROM TEXT": 10,
+    "DIRECTLY WRITTEN": 15,
+    "UNVERIFIED": 5
+  }
+}

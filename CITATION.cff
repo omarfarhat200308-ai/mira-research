@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the Zenodo research artifact."
+title: "MIRA: A Multi-Stage Triage Pipeline with a Triage-Stage Red-Flag Layer, Designed for WhatsApp-Based Use in Low-Resource, Multilingual Settings — An Interim Evaluation on a 30-Case Synthetic Set"
+type: software
+version: v1.3-corrected
+date-released: 2026-10-04
+doi: 10.5281/zenodo.23136983
+license: MIT
+authors:
+  - family-names: Farhat
+    given-names: Mohammed Omar
+    affiliation: "Independent researcher, Hyderabad, India"
+  - family-names: Zia
+    given-names: Syeda Fahada
+    affiliation: "Government Medical College, Nagarkurnool, Telangana, India"
+  - family-names: Kumar
+    given-names: L. Sunil
+    affiliation: "Gandhi Medical College & Hospital, Secunderabad, Telangana, India"
+abstract: >-
+  Research prototype of a fixed six-stage sequential triage pipeline with a
+  deterministic red-flag layer at the Triage stage. Not clinically validated,
+  not deployed, not evaluated on real patients. Evaluation uses 30 synthetic cases.
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23067418"
+    description: "Concept DOI (all versions)"
+repository-code: "https://github.com/omarfarhat200308-ai/mira-research"
+url: "https://zenodo.org/records/23136983"
+keywords:
+  - clinical triage
+  - multi-stage pipeline
+  - low-resource healthcare
+  - WhatsApp
+  - romanized script
+  - large language models

@@ -1,0 +1,84 @@
+{
+  "evaluation_date_utc": {
+    "start": "2026-09-11T12:31:59Z",
+    "end": "2026-09-11T20:20:04Z",
+    "status": "VERIFIED",
+    "source": "logs/2026-09-11.jsonl timestamps"
+  },
+  "recorded_git_commit": {
+    "value": [
+      "f4fc9ef",
+      "decc25b"
+    ],
+    "status": "VERIFIED as recorded; NOT verified as the executed code (dirty tree)"
+  },
+  "best_candidate_code_snapshot": {
+    "value": "fea51d4842d21f502e3e868175833d36610250db",
+    "status": "UNVERIFIED"
+  },
+  "llm_providers": {
+    "value": {
+      "groq": 165,
+      "nvidia": 105,
+      "gemini": 3,
+      "anthropic": 0
+    },
+    "status": "VERIFIED",
+    "source": "logs/2026-09-11.jsonl provider field (agent calls)"
+  },
+  "models": {
+    "value": [
+      "openai/gpt-oss-120b (groq)",
+      "openai/gpt-oss-20b (nvidia NIM)",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "deepseek-ai/deepseek-v4-flash-0731 (nvidia NIM)",
+      "gemini-flash-latest"
+    ],
+    "status": "VERIFIED (strings only; versions UNVERIFIED)"
+  },
+  "final_table_composition": {
+    "value": "best-clean-record-per-case aggregate over 17 run directories (eval/aggregate.py)",
+    "status": "VERIFIED"
+  },
+  "final_records_by_intake_prompt_state": {
+    "before_edit": [
+      "d1_child_mild_cough",
+      "g1_elderly_chest_pain_alone"
+    ],
+    "after_edit": 28,
+    "status": "VERIFIED (timestamps)"
+  },
+  "rater_reviewed_outputs_equal_final_aggregate": {
+    "value": "29/29 non-B2 MIRA cells in Rater-1 xlsx equal recovered final aggregate",
+    "status": "VERIFIED"
+  },
+  "postgres": {
+    "value": false,
+    "status": "VERIFIED absent (no instance, dump, or code path in use; SQLite default)"
+  },
+  "docker": {
+    "value": false,
+    "status": "VERIFIED absent (no Dockerfile/compose/container/volume for MIRA)"
+  },
+  "anthropic_used": {
+    "value": false,
+    "status": "VERIFIED for the recovered run; README states no ANTHROPIC_API_KEY ever present"
+  },
+  "indictrans2_aksharamukha": {
+    "value": false,
+    "status": "VERIFIED absent (no import/dependency; romanization.py states it is a curated dictionary)"
+  },
+  "temperature_and_sampling": {
+    "status": "UNVERIFIED"
+  },
+  "dependency_versions_at_run": {
+    "status": "UNVERIFIED",
+    "current_venv": {
+      "python": "3.14.6",
+      "pydantic": "2.13.4",
+      "anthropic": "0.116.0",
+      "fastapi": "0.139.0",
+      "sqlalchemy": "2.0.52"
+    }
+  }
+}

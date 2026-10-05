@@ -1,0 +1,31 @@
+case_key,group,author_expected,mira_cell_in_workbook,rater1_raw_entries,rater1_tier,tier_provenance,note
+a1_chest_pain_dyspnea,A,emergency,emergency,J=agree,emergency,INFERRED FROM TEXT,'agree' read as agreement with the author-assigned tier; could instead refer to MIRA's output
+a2_preeclampsia,A,emergency,emergency,J=agree,emergency,INFERRED FROM TEXT,'agree' read as agreement with the author-assigned tier; could instead refer to MIRA's output
+a3_postpartum_bleeding,A,emergency,emergency,J=agree,emergency,INFERRED FROM TEXT,'agree' read as agreement with the author-assigned tier; could instead refer to MIRA's output
+a4_infant_meningitis,A,emergency,emergency,K=need to be a emergency nothng shown rule over ride is required,emergency,DIRECTLY WRITTEN,tier word in column K
+a5_seizure,A,emergency,emergency,J=agree,emergency,INFERRED FROM TEXT,'agree' read as agreement with the author-assigned tier; could instead refer to MIRA's output
+a6_stroke,A,emergency,None (parked for clarification),J=agree,emergency,INFERRED FROM TEXT,'agree' read as agreement with the author-assigned tier; could instead refer to MIRA's output
+a7_trauma_bleeding,A,emergency,emergency,J=agree,emergency,INFERRED FROM TEXT,'agree' read as agreement with the author-assigned tier; could instead refer to MIRA's output
+a8_gi_bleeding,A,emergency,None (parked for clarification),,,UNVERIFIED,row blank in recovered workbook
+b1_severe_weakness_breathing,B,emergency,emergency,,,UNVERIFIED,row blank in recovered workbook
+b2_reduced_fetal_movement,B,urgent,,K=should be emergency,emergency,DIRECTLY WRITTEN,tier word in column K
+c1_child_fast_breathing,C,urgent,routine,J=wrong || K=should be urgent,urgent,DIRECTLY WRITTEN,tier word in column K
+c2_newborn_not_feeding,C,urgent,None (parked for clarification),J=wrong || K=should be emergency,emergency,DIRECTLY WRITTEN,tier word in column K
+c3_child_dehydration,C,urgent,None (parked for clarification),J=correct,urgent,INFERRED FROM TEXT,'correct' read as agreement with the author-assigned tier; could instead refer to MIRA's output
+c4_newborn_breathing,C,emergency,None (parked for clarification),J=wrong || K=should be emergency,emergency,DIRECTLY WRITTEN,tier word in column K
+c5_chronic_cough_weightloss,C,urgent,None (parked for clarification),J=wrong || K=should be urgent,urgent,DIRECTLY WRITTEN,tier word in column K
+c6_infant_persistent_fever,C,urgent,emergency,J=agree,urgent,INFERRED FROM TEXT,'agree' read as agreement with the author-assigned tier; could instead refer to MIRA's output
+d1_child_mild_cough,D,routine,routine,J=agree,routine,INFERRED FROM TEXT,'agree' read as agreement with the author-assigned tier; could instead refer to MIRA's output
+d2_child_fever_well,D,routine,None (parked for clarification),"J=agree || I(edited, wrong column)=routine",routine,DIRECTLY WRITTEN,tier word in column I; typed in the MIRA_decision_path column
+d3_child_diarrhea_no_dehydration,D,routine,None (parked for clarification),"J=agree || I(edited, wrong column)=routine",routine,DIRECTLY WRITTEN,tier word in column I; typed in the MIRA_decision_path column
+d4_adult_sprain,D,routine,None (parked for clarification),"J=agree || I(edited, wrong column)=routine",routine,DIRECTLY WRITTEN,tier word in column I; typed in the MIRA_decision_path column
+d5_adult_sore_throat,D,routine,urgent,"I(edited, wrong column)=should be routine",routine,DIRECTLY WRITTEN,tier word in column I; typed in the MIRA_decision_path column
+d6_adult_mild_headache,D,routine,None (parked for clarification),"J=should be routine || I(edited, wrong column)=routine",routine,DIRECTLY WRITTEN,tier word in column I; typed in the MIRA_decision_path column
+e1_romanized_hindi_preeclampsia,E,emergency,None (parked for clarification),,,UNVERIFIED,row blank in recovered workbook
+e2_romanized_telugu_child_breathing,E,urgent,None (parked for clarification),"I(edited, wrong column)=should be urgent",urgent,DIRECTLY WRITTEN,tier word in column I; typed in the MIRA_decision_path column
+e3_romanized_hindi_mild_cold,E,routine,None (parked for clarification),"I(edited, wrong column)=routine",routine,DIRECTLY WRITTEN,tier word in column I; typed in the MIRA_decision_path column
+f1_vague_sick_since_morning,F,park,None (parked for clarification),K=need more information,need_more_info,DIRECTLY WRITTEN,not a triage tier
+f2_missing_severity,F,park,None (parked for clarification),K=need more information,need_more_info,DIRECTLY WRITTEN,not a triage tier
+f3_ambiguous_ok_to_proceed,F,routine,routine,J=agree,routine,INFERRED FROM TEXT,'agree' read as agreement with the author-assigned tier; could instead refer to MIRA's output
+g1_elderly_chest_pain_alone,G,urgent,emergency,J=not agree,,UNVERIFIED,'not agree' is not a tier; no replacement tier written
+g2_nonpostpartum_heavy_bleeding,G,emergency,None (parked for clarification),,,UNVERIFIED,row blank in recovered workbook
