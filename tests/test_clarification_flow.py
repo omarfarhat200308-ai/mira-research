@@ -47,8 +47,12 @@ def test_intake_halts_and_asks_without_proceeding():
     assert result.pending_clarifying_question == INCOMPLETE_INTAKE["clarifying_question"]
     assert "age" in result.missing_critical_fields
     assert "sex" in result.missing_critical_fields
-    # Nothing downstream ran.
-    assert result.final_triage is None
+    # Nothing downstream ran (no Diagnostic/Referral), but v2 attaches a
+    # deterministic safety message: this text describes chest pain + dyspnea,
+    # so the LLM-free pre-screen escalates to EMERGENCY instead of leaving
+    # the sender with only a question.
+    assert result.final_triage == Urgency.EMERGENCY
+    assert "108" in result.patient_facing_reply
     assert result.differential == []
     assert len(result.clarification_history) == 1
 

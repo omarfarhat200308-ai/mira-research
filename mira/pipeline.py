@@ -28,7 +28,33 @@ from .agents.triage import TriageAgent
 from .language.romanization import normalize_romanized_text
 from .llm_client import LLMClient, build_default_client
 from .notifications import doctor_handoff
+from .safety import precheck
 from .state import DataSource, IntakeStatus, PatientCase, PipelineStatus, TriageDecidedBy, Urgency
+
+
+def _precheck_fired(case: PatientCase) -> list[str]:
+    answers = [r.answer for r in case.clarification_history]
+    return precheck.screen(case.raw_input_text, case.normalized_input_text, *answers)
+
+
+def _apply_interim_safety(case: PatientCase) -> PatientCase:
+    """Intake halted for a missing field. Never leave the sender with only a
+    question: attach a safety message, and escalate to EMERGENCY (which also
+    triggers Stage 5 handoff in _finalize) if the deterministic pre-screen
+    fires. pipeline_status stays AWAITING_CLARIFICATION so the case can still
+    resume; the Triage stage overwrites final_triage on resume."""
+    updated = case.model_copy(deep=True)
+    fired = _precheck_fired(updated)
+    question = updated.pending_clarifying_question or ""
+    if fired:
+        updated.final_triage = Urgency.EMERGENCY
+        updated.triage_decided_by = TriageDecidedBy.RULE_OVERRIDE
+        updated.red_flags_triggered = fired
+        head = config.INTERIM_EMERGENCY_TEXT
+    else:
+        head = config.INTERIM_SAFETY_TEXT
+    updated.patient_facing_reply = f"{head}\n\n{question}".strip()
+    return updated
 
 
 def _apply_failsafe_degradation(case: PatientCase, failed_agent: str, reason: str) -> PatientCase:
@@ -41,7 +67,14 @@ def _apply_failsafe_degradation(case: PatientCase, failed_agent: str, reason: st
     updated.failed_agent = failed_agent
     updated.failure_reason = reason
 
-    if updated.final_triage is None or updated.final_triage == Urgency.ROUTINE:
+    # v2: if the deterministic text pre-screen sees a red flag, a failed
+    # stage must degrade to EMERGENCY, not merely URGENT.
+    fired = _precheck_fired(updated)
+    if fired and updated.final_triage != Urgency.EMERGENCY:
+        updated.final_triage = Urgency.EMERGENCY
+        updated.triage_decided_by = TriageDecidedBy.RULE_OVERRIDE
+        updated.red_flags_triggered = fired
+    elif updated.final_triage is None or updated.final_triage == Urgency.ROUTINE:
         updated.final_triage = Urgency.URGENT
         updated.triage_decided_by = TriageDecidedBy.FAILSAFE_DEGRADED
 
@@ -158,6 +191,8 @@ def run_pipeline(
                 f"{config.MAX_CLARIFICATION_ROUNDS} clarification rounds: "
                 f"{case.missing_critical_fields}",
             )
+        else:
+            case = _apply_interim_safety(case)
         return _finalize(case)
 
     for agent in (language_normalize, diagnostic, triage, referral):

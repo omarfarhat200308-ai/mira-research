@@ -54,7 +54,10 @@ def test_failsafe_degraded_urgent_case_still_reaches_doctor_handoff_evaluation()
     )
 
     assert result.pipeline_status == PipelineStatus.DEGRADED
-    assert result.final_triage == Urgency.URGENT
+    # v2: BASE_CASE text contains a deterministic red flag, so a degraded run
+    # escalates to EMERGENCY (non-red-flag text still lands on URGENT; see
+    # tests/test_precheck_and_interim_safety.py).
+    assert result.final_triage == Urgency.EMERGENCY
     # Handoff was evaluated (not silently skipped by an early return) — in
     # this test env it's skipped only because ENABLE_DOCTOR_HANDOFF_SEND
     # isn't set, never because the degraded path bypassed evaluation.

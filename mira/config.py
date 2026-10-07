@@ -157,3 +157,20 @@ FAILSAFE_REFERRAL_TEXT = (
 )
 
 LOG_DIR = os.environ.get("MIRA_LOG_DIR", "logs")
+
+
+# Interim messages attached when Intake halts for clarification (see
+# pipeline.py). Added in v2 after the v1.3 finding that halted cases got no
+# safety message at all. English fallback text; the Language-translate stage
+# is NOT run on halted cases, so these are intentionally short and plain.
+INTERIM_SAFETY_TEXT = (
+    "We need one more detail to finish assessing this. Meanwhile, if the "
+    "patient has trouble breathing, chest pain, fits, is unconscious, is "
+    "bleeding heavily, or is getting worse, go to the nearest health "
+    "facility immediately."
+)
+INTERIM_EMERGENCY_TEXT = (
+    "EMERGENCY: what you describe may be life-threatening. Take the "
+    "patient to the nearest hospital or call 108 now. Do not wait for "
+    "further questions."
+)
