@@ -21,7 +21,7 @@ cannot support any accuracy or safety claim. v2 is designed so that it can fail.
   Romanized Hindi/Telugu terms are unreviewed by a native-speaking clinician.
 
 ## 2. Case set (held out)
-* N >= 100 cases, written or sourced BEFORE freeze, never viewed during any code change after freeze.
+* N >= 60 cases (draft packets in docs/v2_cases/; pediatric 20, obstetric 20, general medicine 20 to come), written or sourced BEFORE freeze, never viewed during any code change after freeze.
 * Source: >= 50% from external material not authored by the first author (public
   IMNCI/WHO CHW/NHM scenario banks, published vignettes with citation, or cases
   written by a clinician who does not see the system). First-author-written cases
@@ -34,8 +34,11 @@ cannot support any accuracy or safety claim. v2 is designed so that it can fail.
 * Case files are frozen as a hashed bundle (SHA-256 published in the registration).
 
 ## 3. Raters
-* >= 3 licensed clinicians, none related to or co-authoring with the first author.
-  The mother (co-author) may advise on design but does NOT rate the held-out set.
+* >= 3 licensed clinicians, none related to the first author. Co-authors who are not relatives may rate if
+  disclosed, and a sensitivity analysis excludes co-author raters. The first author's mother does NOT rate.
+* Specialty coverage: general medicine (adult cases), pediatrics (child/newborn), obstetrics-gynaecology
+  (maternal); each case set is rated by the matching specialist, adult cases by general medicine.
+* Credentials of each rater are stated in the report, with permission.
 * Blind to system output and to each other. Rate from case text only.
 * Report inter-rater agreement (Fleiss kappa, with CI) BEFORE comparing to system.
 * If recruitment of >= 3 external raters fails, v2 reports "unrated" and makes no
